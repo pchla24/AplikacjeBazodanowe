@@ -226,6 +226,15 @@ input[type=submit]:hover {
   padding-bottom: 5%;
 }
 
+#loginFormContainer {
+  
+  background-color: #f2f2f2;
+  padding-left: 35%;
+  margin-top: 8%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
 
 
 
