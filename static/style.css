@@ -94,12 +94,10 @@ nav a:hover::before {
 }
 
 .categoryRow {
-
   margin-left: auto;
   margin-right: auto;
 	text-align: center;
   padding-bottom: 10%;
-
 }
 
 .catLeftContainer {
@@ -226,6 +224,52 @@ input[type=submit]:hover {
   margin-top: 8%;
   padding-top: 6%;
   padding-bottom: 5%;
+}
+
+
+
+
+
+
+
+#product_content {
+  margin: auto;
+  margin-top: 200px;
+  width: 90%;
+}
+
+.product_name {
+  height: 10%;
+  margin-left: 3%;
+  font-size: 30px;
+}
+
+.product_view {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10%;
+}
+
+.product_image {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  margin-right: 5%;
+  background-color: #368851;
+  
+}
+
+.productPic {
+  width: 100%;
+}
+
+.product_properties {
+  position: absolute;
+  display: inline-block;
+  width: 600px;
+  height: 360px;
+  padding-left: 40px;
+  padding-top: 40px;
 }
 
 
