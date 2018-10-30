@@ -235,6 +235,28 @@ input[type=submit]:hover {
   padding-bottom: 10%;
 }
 
+#accountCreated {
+  margin-top: 10%;
+  padding-top: 10%;
+  padding-bottom: 12%;
+  text-align: center;
+}
+
+#createUserLoginButton {
+  background-color: #1c6835;
+  color: white;
+  padding: 22px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#createUserLoginButton:hover {
+  background-color: #368851;
+}
+
 
 
 
