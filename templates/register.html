@@ -19,19 +19,23 @@
 					</div>
 				</header>
 				<div id="regFormContainer">
-						<form method="POST"  action="">
+						<form method="POST"  action="" onsubmit="return Validate()">
 					
 							<label for="login">Nazwa użytkownika</label><br />
-							<input type="text" id="reglogin" name="login" required placeholder="Nazwa użytkownika..."><br />
+							<input type="text" id="reglogin" name="login" placeholder="Nazwa użytkownika..."><br />
+							<div id="login_error" class="reg_error"></div>
 					
 							<label for="email">Adres email</label><br />
-							<input type="text" id="email" name="email" required placeholder="Adres email..."><br />
+							<input type="text" id="email" name="email" placeholder="Adres email..."><br />
+							<div id="email_error" class="reg_error"></div>
 
 							<label for="password">Hasło</label><br />
-							<input type="password" id="regpassword" name="password" required placeholder="Hasło..."><br />
+							<input type="password" id="regpassword" name="password" placeholder="Hasło..."><br />
+							<div id="password_error" class="reg_error"></div>
 
 							<label for="confirm_password">Powtórz hasło</label><br />
-							<input type="password" id="confirm_password" name="confirm_password" required placeholder="Powtórz hasło..."><br />
+							<input type="password" id="confirm_password" name="confirm_password" placeholder="Powtórz hasło..."><br />
+							<div id="confirm_password_error" class="reg_error"></div>
 					
 							<input type="submit" id="regsubmit" value="Zarejestruj się">
 					

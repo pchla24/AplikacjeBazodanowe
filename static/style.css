@@ -188,6 +188,14 @@ footer {
 	text-align:center;
 }
 
+.reg_error {
+  color: red;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
 input[type=text], input[type=password], select, textarea {
   width: 50%; 
   padding: 12px; 
@@ -195,7 +203,7 @@ input[type=text], input[type=password], select, textarea {
   border-radius: 4px; 
   box-sizing: border-box; 
   margin-top: 6px; 
-  margin-bottom: 16px; 
+  margin-bottom: 5px; 
   resize: vertical 
 }
 
