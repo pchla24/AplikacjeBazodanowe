@@ -24,23 +24,16 @@
 	<div class="category_content">
     <div class="search_container">
       <form action="">
-        <input class="search_bar" type="text" name="search" placeholder="Wyszukaj..."><button 
-        type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
+        <input class="search_bar" type="text" name="search" placeholder="Wyszukaj..."><button type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
       </form>
     </div>
     <div class="category_filter">
       Miejsce na filtry
     </div>
     <ul class="product_list">
-      Miejsce na listę produktów
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
+      {% for product in productList %}
+        <li><a href="product_template"><button class="product_elem_btn"><span class="product_list_name">{{product}}</span><span class="product_list_price">Cena</span></button></a></li>
+      {% endfor %}
     </ul>
 	</div>
 <footer>

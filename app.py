@@ -15,7 +15,8 @@ def register():
 
 @app.route('/bikes')
 def bikes():
-    return render_template('category_template.html')
+    testList = ["produkt1", "produkt2", "produkt3"]
+    return render_template('category_template.html', productList=testList)
 
 @app.route('/frames')
 def frames():

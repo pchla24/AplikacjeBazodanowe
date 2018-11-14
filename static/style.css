@@ -303,23 +303,44 @@ input[type=submit]:hover {
   background-color: aqua;
   padding-left: 2%;
   margin-top: 20px;
-  margin-right: 3%;
+  
   margin-bottom: 3%;
 }
 
 .product_list {
   display: inline-block;
-  background-color: red;
   position: absolute;
   margin-top: 20px;
   margin-bottom: 3%;
-  width: 60%;
-
+  width: 70%;
+  list-style: none;
 }
 
+.product_elem_btn {
+  width: 100%;
+  clear: both;
+  background: #e9e9e9;
+  border: 1px solid #ccc;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  cursor: pointer;
+}
 
+.product_elem_btn:hover {
+  background: #ddd;
+}
 
+.product_list_name {
+  float: left;
+  font-size: 20px;
+  margin-left: 20px;
+}
 
+.product_list_price {
+  float: right;
+  font-size: 20px;
+  margin-right: 20px;
+}
 
 
 #product_content {
