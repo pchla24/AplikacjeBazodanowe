@@ -49,3 +49,6 @@ def userCreated():
 @app.route('/product_template')
 def product_template():
     return render_template('product_template.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
