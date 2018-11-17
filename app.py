@@ -1,5 +1,8 @@
 from flask import Flask, render_template
+from model import model_
+
 app = Flask(__name__)
+app.register_blueprint(model_)
 
 @app.route('/')
 def index():
