@@ -170,6 +170,228 @@ ALTER TABLE Zamowienie_pozycja ADD CONSTRAINT Zamowienie_pozycja_Produkt FOREIGN
 -- Reference: Zamowienie_pozycja_Zamowienie (table: Zamowienie_pozycja)
 ALTER TABLE Zamowienie_pozycja ADD CONSTRAINT Zamowienie_pozycja_Zamowienie FOREIGN KEY Zamowienie_pozycja_Zamowienie (Zamowienie_id)
     REFERENCES Zamowienie (id);
+    
+    
+-- Przykładowe rekordy
+
+-- Kategoria
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('rower');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('rama');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('kierownica');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('siodełko');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('koło');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('opona');
+
+-- Marka
+INSERT INTO Marka (Nazwa_marki) VALUES ('Kettler');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Pin Up');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Le Grand');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Burghardt');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Unity');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Accent');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Continental');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Kenda');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Mitas');
+INSERT INTO Marka (Nazwa_marki) VALUES ('Fulcrum');
+
+-- Miasto
+INSERT INTO Miasto (Nazwa) VALUES ('Warszawa');
+INSERT INTO Miasto (Nazwa) VALUES ('Kraków');
+INSERT INTO Miasto (Nazwa) VALUES ('Toruń');
+INSERT INTO Miasto (Nazwa) VALUES ('Gdańsk');
+INSERT INTO Miasto (Nazwa) VALUES ('Wrocław');
+
+-- Rodzaj_roweru
+INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Miejski');
+INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Cruiser');
+INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Szosowy');
+INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Górski');
+INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Elektryczny');
+
+-- Rower
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Lola Evo', 26, 'Lola Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Pin Up';
+	
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Traveller 4', 25, 'Traveller 4',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Kettler';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'City Cruiser Comfort', 24, 'City Cruiser Comfort',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Kettler';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Glider', 26, 'Glider',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Elektryczny'
+	AND m.Nazwa_marki = 'Kettler';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Monster', 27, 'Monster',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Górski'
+	AND m.Nazwa_marki = 'Accent';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Shark', 26, 'Shark',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Szosowy'
+	AND m.Nazwa_marki = 'Accent';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Daisy 2', 25, 'Daisy 2',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Accent';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Julia', 25, 'Julia',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Kettler';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Freeliner', 26, 'Freeliner',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Accent';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Berlin Cargo', 28, 'Berlin Cargo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Kettler';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Madison', 25, 'Madison',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Le Grand';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Sanibel', 24, 'Sanibel',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Le Grand';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'William', 26, 'William',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Le Grand';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Swan', 26, 'Swan',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Burghardt';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Race Star', 28, 'Race Star',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Górski'
+	AND m.Nazwa_marki = 'Burghardt';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Varsovia', 26, 'Varsovia',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Elektryczny'
+	AND m.Nazwa_marki = 'Unity';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Mosca', 25, 'Mosca',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Elektryczny'
+	AND m.Nazwa_marki = 'Unity';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Jasmine Evo', 26, 'Jasmine Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Pin Up';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Nadie Evo', 27, 'Nadie Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Cruiser'
+	AND m.Nazwa_marki = 'Pin Up';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Gina Evo', 28, 'Gina Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Szosowy'
+	AND m.Nazwa_marki = 'Pin Up';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Stella Evo', 26, 'Stella Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Elektryczny'
+	AND m.Nazwa_marki = 'Pin Up';
+    
+INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
+	SELECT 'Holy Evo', 26, 'Holy Evo',  r.id, m.id
+	FROM Rodzaj_roweru AS r
+	CROSS JOIN Marka AS m
+	WHERE r.Rodzaj = 'Miejski'
+	AND m.Nazwa_marki = 'Pin Up';
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 -- End of file.
 
