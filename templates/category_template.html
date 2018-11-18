@@ -32,7 +32,7 @@
     </div>
     <ul class="product_list">
       {% for product in productList %}
-        <li><a href="product_template"><button class="product_elem_btn"><span class="product_list_name">{{product}}</span><span class="product_list_price">Cena</span></button></a></li>
+        <li><a href="product_template"><button class="product_elem_btn"><span class="product_list_name">{{product.nazwa_kategorii}}</span><span class="product_list_price">{{product.nazwa_kategorii}}</span></button></a></li>
       {% endfor %}
     </ul>
 	</div>

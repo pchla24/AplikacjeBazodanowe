@@ -366,155 +366,155 @@ INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, 
 
 -- Produkt
 
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 500
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 500
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 1;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 900
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 900
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 2;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 700
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 700
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 3;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 900
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 900
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 4;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 600
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 600
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 5;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 750
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 750
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 6;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 550
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 550
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 7;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 820
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 820
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 8;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 400
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 400
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 9;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 720
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 720
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 10;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 910
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 910
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 11;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 500
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 500
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 12;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 930
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 930
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 13;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 400
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 400
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 14;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 550
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 550
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 15;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 600
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 600
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 16;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 770
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 770
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 17;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 940
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 940
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 18;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 500
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 500
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 19;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 800
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 800
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 20;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 950
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 950
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 21;
     
-INSERT INTO Produkt (Kategoria_id, Rower_id, Cena)
-	SELECT k.id, r.id, 820
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
+	SELECT r.Nazwa_roweru, k.id, r.id, 820
 	FROM Kategoria AS k
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'

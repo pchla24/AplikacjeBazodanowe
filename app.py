@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from model import model_
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
-from model import Kategoria
+from model import Kategoria, Produkt, RodzajRoweru, Marka, Rower
 
 app = Flask(__name__)
 app.register_blueprint(model_)
@@ -18,9 +18,6 @@ def index():
 
 @app.route('/login')
 def login():
-    test = Kategoria(nazwa_kategorii='test2')
-    db.session.add(test)
-    db.session.commit()
     return render_template('login.html')
 
 @app.route('/register')
@@ -29,7 +26,9 @@ def register():
 
 @app.route('/bikes')
 def bikes():
-    testList = ["produkt1", "produkt2", "produkt3"]
+    # Tu wywala ze Kategoria nie ma atrybutu query
+    testList = Kategoria.query.all()
+    #bikes = Produkt.query.join(Rower, Produkt.rower_id==Rower.id).join(RodzajRoweru, Rower.rodzaj_roweru_id==RodzajRoweru.id).join(Marka, Rower.marka_id==Marka.id).all()
     return render_template('category_template.html', productList=testList)
 
 @app.route('/frames')
