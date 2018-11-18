@@ -1,8 +1,16 @@
 from flask import Flask, render_template
 from model import model_
+from flask_sqlalchemy import SQLAlchemy
+import pymysql
+from model import Kategoria
 
 app = Flask(__name__)
 app.register_blueprint(model_)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sklep:sklep@localhost:3306/sklep_rowerowy'
+app.config['SQLALCHEMY_ECHO'] = True
+
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
@@ -10,6 +18,9 @@ def index():
 
 @app.route('/login')
 def login():
+    test = Kategoria(nazwa_kategorii='test2')
+    db.session.add(test)
+    db.session.commit()
     return render_template('login.html')
 
 @app.route('/register')
