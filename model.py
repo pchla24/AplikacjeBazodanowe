@@ -8,12 +8,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, BigInteger, String, ForeignKey, Unicode, Binary, LargeBinary, Time, DateTime, Date, Text, Boolean, Float, JSON
 from sqlalchemy.orm import relationship, backref, deferred
 from sqlalchemy.orm import sessionmaker
-
-Base = declarative_base()
-
+from app import db
 
 
-class Produkt (Base):
+
+class Produkt (db.Model):
     __tablename__ = "Produkt"
     nazwa_produktu = Column('Nazwa_produktu', Unicode)
     id = Column('id', Integer, primary_key = True)
@@ -24,12 +23,12 @@ class Produkt (Base):
     kategoria = relationship('Kategoria', foreign_keys=kategoria_id)
     rower = relationship('Rower', foreign_keys=rower_id)
 
-class Kategoria (Base):
+class Kategoria (db.Model):
     __tablename__ = "Kategoria"
     id = Column('id', Integer, primary_key = True)
     nazwa_kategorii = Column('Nazwa_kategorii', Unicode)
 
-class ZamowieniePozycja (Base):
+class ZamowieniePozycja (db.Model):
     __tablename__ = "Zamowienie_pozycja"
     id = Column('id', Integer, primary_key = True)
     produkt_id = Column('Produkt_id', Integer, ForeignKey('Produkt.id'))
@@ -38,12 +37,12 @@ class ZamowieniePozycja (Base):
     produkt = relationship('Produkt', foreign_keys=produkt_id)
     zamowienie = relationship('Zamowienie', foreign_keys=zamowienie_id)
 
-class RodzajRoweru (Base):
+class RodzajRoweru (db.Model):
     __tablename__ = "Rodzaj_roweru"
     id = Column('id', Integer, primary_key = True)
     rodzaj = Column('Rodzaj', Unicode)
 
-class Rower (Base):
+class Rower (db.Model):
     __tablename__ = "Rower"
     id = Column('id', Integer, primary_key = True)
     nazwa_roweru = Column('Nazwa_roweru', Unicode)
@@ -55,12 +54,12 @@ class Rower (Base):
     rodzaj_roweru = relationship('RodzajRoweru', foreign_keys=rodzaj_roweru_id)
     marka = relationship('Marka', foreign_keys=marka_id)
 
-class Marka (Base):
+class Marka (db.Model):
     __tablename__ = "Marka"
     id = Column('id', Integer, primary_key = True)
     nazwa_marki = Column('Nazwa_marki', Unicode)
 
-class StanMagazynowy (Base):
+class StanMagazynowy (db.Model):
     __tablename__ = "Stan_magazynowy"
     id = Column('id', Integer, primary_key = True)
     stan = Column('Stan', Integer)
@@ -70,7 +69,7 @@ class StanMagazynowy (Base):
     produkt = relationship('Produkt', foreign_keys=produkt_id)
     lokalizacja_sklepu = relationship('LokalizacjaSklepu', foreign_keys=lokalizacja_sklepu_id)
 
-class LokalizacjaSklepu (Base):
+class LokalizacjaSklepu (db.Model):
     __tablename__ = "Lokalizacja_sklepu"
     id = Column('id', Integer, primary_key = True)
     kod_pocztowy = Column('kod_pocztowy', Integer)
@@ -80,12 +79,12 @@ class LokalizacjaSklepu (Base):
 
     miasto = relationship('Miasto', foreign_keys=miasto_id)
 
-class Miasto (Base):
+class Miasto (db.Model):
     __tablename__ = "Miasto"
     id = Column('id', Integer, primary_key = True)
     nazwa = Column('Nazwa', Unicode)
 
-class Zamowienie (Base):
+class Zamowienie (db.Model):
     __tablename__ = "Zamowienie"
     id = Column('id', Integer, primary_key = True)
     lokalizacja_sklepu_id = Column('Lokalizacja_sklepu_id', Integer, ForeignKey('Lokalizacja_sklepu.id'))
@@ -94,7 +93,7 @@ class Zamowienie (Base):
     lokalizacja_sklepu = relationship('LokalizacjaSklepu', foreign_keys=lokalizacja_sklepu_id)
     klient = relationship('Klient', foreign_keys=klient_id)
 
-class Pracownik (Base):
+class Pracownik (db.Model):
     __tablename__ = "Pracownik"
     id = Column('id', Integer, primary_key = True)
     stanowisko = Column('Stanowisko', Unicode)
@@ -104,7 +103,7 @@ class Pracownik (Base):
 
     lokalizacja_sklepu = relationship('LokalizacjaSklepu', foreign_keys=lokalizacja_sklepu_id)
 
-class Klient (Base):
+class Klient (db.Model):
     __tablename__ = "Klient"
     id = Column('id', Integer, primary_key = True)
     imie = Column('Imie', Unicode)
@@ -113,7 +112,7 @@ class Klient (Base):
     haslo = Column('haslo', Unicode)
     email = Column('email', Unicode)
 
-class Blad (Base):
+class Blad (db.Model):
     __tablename__ = "Blad"
     id = Column('id', Integer, primary_key = True)
     # Unknown SQL type: 'time'

@@ -4,7 +4,7 @@ body {
 	margin: 0px;
 	background: #ffffff;
 	font-family: 'Work Sans', sans-serif;
-	font-weight: 800;
+  font-weight: 800;
 }
 
 #headContainer {
@@ -90,7 +90,7 @@ nav a:hover::before {
   position: relative;
   margin: 670px auto;
   margin-bottom: 0px;
-  background: #f2f2f2
+  background: #f2f2f2;
 }
 
 .categoryRow {
@@ -171,15 +171,16 @@ nav a:hover::before {
   font-size: 50px;
 }
 
-
+/*
 footer {
 	width:100%;
   background-color:#494949;
-  position: relative;
+  position: fixed;
   padding:40px 0px;
   left:0px;
   bottom:0px;
 }
+
 
 .stopka{
 	font-family:"Work Sans", sans-serif;
@@ -187,6 +188,7 @@ footer {
 	color:#ffffff;
 	text-align:center;
 }
+*/
 
 .reg_error {
   color: red;
