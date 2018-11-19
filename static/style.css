@@ -316,6 +316,22 @@ input[type=submit]:hover {
 .cartItem {
   margin-bottom: 20px;
 }
+
+.addToCartButton, .checkAvailButton {
+  background-color: #1c6835;
+  color: white;
+  width: 180px;
+  height: 40px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.addToCartButton:hover, .checkAvailButton:hover {
+  background-color: #368851;
+}
   
 
 .category_content {
