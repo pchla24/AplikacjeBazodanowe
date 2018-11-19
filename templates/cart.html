@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<title>Rowery</title>
+<link rel="stylesheet" href="../static/style.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="container">
+	<header>
+		<div id="headContainer">
+			<a href="/"><img src="../static/images/logoRowery.png" alt="logo" id="logo"/></a>
+			<nav>
+				<ul>
+					<li><a href="/">Powrót do zakupów</a></li>
+				</ul>
+			</nav>
+		</div>
+  </header>
+	<div class="cartContent">
+    <h2>Twój koszyk</h2>
+    <div>
+      <ul class="cartList">
+          <li class="cartItem"><a href=""><button class="product_elem_btn"><span class="product_list_name">Test nazwy</span><span class="product_list_price">Test ceny</span></button></a><a href=""><button type="button" class="cartDelBtn">Usuń ten produkt z koszyka</button></a></li>
+          <li class="cartItem"><a href=""><button class="product_elem_btn"><span class="product_list_name">Test nazwy</span><span class="product_list_price">Test ceny</span></button></a><a href=""><button type="button" class="cartDelBtn">Usuń ten produkt z koszyka</button></a></li>
+          <li class="cartItem"><a href=""><button class="product_elem_btn"><span class="product_list_name">Test nazwy</span><span class="product_list_price">Test ceny</span></button></a><a href=""><button type="button" class="cartDelBtn">Usuń ten produkt z koszyka</button></a></li>
+          <li class="cartItem"><a href=""><button class="product_elem_btn"><span class="product_list_name">Test nazwy</span><span class="product_list_price">Test ceny</span></button></a><a href=""><button type="button" class="cartDelBtn">Usuń ten produkt z koszyka</button></a></li>
+          <li class="cartItem"><a href=""><button class="product_elem_btn"><span class="product_list_name">Test nazwy</span><span class="product_list_price">Test ceny</span></button></a><a href=""><button type="button" class="cartDelBtn">Usuń ten produkt z koszyka</button></a></li>
+          
+          
+        <!--
+        {% for item in cartList %}
+          <li><a href=""><button class="product_elem_btn"><span class="product_list_name">{{item.nazwa_produktu}}</span><span class="product_list_price">{{item.cena}}</span></button></a></li>
+        {% endfor %}
+        -->
+      </ul>
+    </div>
+    <div><a href=""><button type="button" class="cartButton">Wróć do zakupów</button></a></div>
+    <div><a href=""><button type="button" class="cartButton">Przejdź do zamówienia</button></a></div>
+  </div>
+<!--
+<footer>
+	<p class="stopka">jakiś footer</p>
+</footer>
+-->
+</div>
+
+</body>
+</html>
