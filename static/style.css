@@ -378,11 +378,32 @@ input[type=submit]:hover {
   display: inline-block;
   width: 300px;
   height: 600px;
-  background-color: aqua;
   padding-left: 2%;
   margin-top: 20px;
-  
   margin-bottom: 3%;
+}
+
+.priceFilterInputs input {
+  width: 80px;
+  margin-left: 90px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  background: #ddd;
+  font-size: 17px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+}
+
+.priceFilterInputs label {
+  position: absolute;
+  font-size: 15px;
+}
+
+
+#priceFilterSubmit {
+  margin-top: 10px;
 }
 
 .product_list {

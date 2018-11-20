@@ -28,7 +28,17 @@
       </form>
     </div>
     <div class="category_filter">
-      Miejsce na filtry
+      <form method="POST" action="">
+        <div class="priceFilterInputs">
+          <label for="price-min">Cena min:</label>
+          <input type="number" name="price-min" id="price-min" value="200" min="0" max="1000">
+          <br>
+          <label for="price-max">Cena max:</label>
+          <input type="number" name="price-max" id="price-max" value="800" min="0" max="1000">
+        </div>
+        <br>
+        <input type="submit" id="priceFilterSubmit" value="Filtruj">
+      </form>
     </div>
     <ul class="product_list">
       {% for product in productList %}
