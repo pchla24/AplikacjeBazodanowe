@@ -236,6 +236,15 @@ input[type=submit]:hover {
   padding-bottom: 5%;
 }
 
+#orderFormContainer {
+  
+  background-color: #f2f2f2;
+  padding-left: 35%;
+  margin-top: 8%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
 #loginFormContainer {
   
   background-color: #f2f2f2;

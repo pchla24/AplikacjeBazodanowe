@@ -97,6 +97,14 @@ def wheels():
 def tyres():
     return render_template('category_template.html')
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/makeOrder')
+def makeOrder():
+    return render_template('order.html')
+
 # do testowania czy poprawnie wyświetla
 @app.route('/userCreated')
 def userCreated():
