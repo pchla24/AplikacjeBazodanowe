@@ -70,28 +70,34 @@ def signUp():
 @app.route('/bikes')
 def bikes():
     # To zapytanie nie musi być takie długie ale chyba poprawnie wyciąga wszystkie dane o produkcie z bazy
-    bikes = model.Produkt.query.join(model.Rower, model.Produkt.rower_id == model.Rower.id).join(model.RodzajRoweru, model.Rower.rodzaj_roweru_id == model.RodzajRoweru.id).join(model.Marka, model.Rower.marka_id == model.Marka.id).all()
+    #bikes = model.Produkt.query.join(model.Rower, model.Produkt.rower_id == model.Rower.id).join(model.RodzajRoweru, model.Rower.rodzaj_roweru_id == model.RodzajRoweru.id).join(model.Marka, model.Rower.marka_id == model.Marka.id).all()
+    bikes = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rower')
     return render_template('category_template.html', productList=bikes)
 
 @app.route('/frames')
 def frames():
-    return render_template('category_template.html')
+    frames = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rama')
+    return render_template('category_template.html', productList=frames)
 
 @app.route('/handlebars')
 def handlebars():
-    return render_template('category_template.html')
+    handlebars = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='kierownica')
+    return render_template('category_template.html', productList=handlebars)
 
 @app.route('/saddles')
 def saddles():
-    return render_template('category_template.html')
+    saddles = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='siodełko')
+    return render_template('category_template.html', productList=saddles)
 
 @app.route('/wheels')
 def wheels():
-    return render_template('category_template.html')
+    wheels = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='koło')
+    return render_template('category_template.html', productList=wheels)
 
 @app.route('/tyres')
 def tyres():
-    return render_template('category_template.html')
+    tyres = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='opona')
+    return render_template('category_template.html', productList=tyres)
 
 @app.route('/cart')
 def cart():
