@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
+import uuid
+
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_login import LoginManager, login_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -39,19 +41,14 @@ def signIn():
     _password = request.form['password']
  #   if form.validate_on_submit():
     user = model.Klient.query.filter_by(login=_login).first()
-    print(user)
     if user:
-        #print(user.haslo)
-        #pas = generate_password_hash(_password)[0:40]
-        #print(pas)
+        session['user'] = _login
+        sid = str(uuid.uuid4())
         if (_password== user.haslo):
             #print('haslo przeszlo')
             #login_user(user)
             return redirect('/')
     return '<h1>Invalid username or password</h1>'
-        #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
-
-  #  return render_template('login.html')
 
 @app.route('/register')
 def register():
@@ -113,6 +110,14 @@ def userCreated():
 @app.route('/product_template')
 def product_template():
     return render_template('product_template.html')
+
+@app.route('/logout')
+def logout():
+    userToLogout = session['user']
+    sidToLogout = session['sid']
+    session.pop('user', None)
+    session.pop('sid', None)
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)
