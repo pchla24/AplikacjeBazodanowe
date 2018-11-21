@@ -110,6 +110,15 @@ def userCreated():
 def product_template():
     return render_template('product_template.html')
 
+@app.route('/stores')
+def stores():
+    stores = model.LokalizacjaSklepu.query.all()
+    return render_template('stores.html')
+
+def searchStores(miasto):
+    stores = model.LokalizacjaSklepu.query.filter_by(miasto = miasto)
+    print("ok" + miasto)
+    return stores
 @app.route('/logout')
 def logout():
     userToLogout = session['user']
