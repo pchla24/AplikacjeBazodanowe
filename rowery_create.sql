@@ -30,7 +30,7 @@ CREATE TABLE Klient (
     Imie varchar(40) NOT NULL,
     Nazwisko varchar(40) NOT NULL,
     login varchar(40) NOT NULL,
-    haslo varchar(40) NOT NULL,
+    haslo varchar(100) NOT NULL,
     email varchar(40) NOT NULL,
     CONSTRAINT Klient_pk PRIMARY KEY (id)
 );

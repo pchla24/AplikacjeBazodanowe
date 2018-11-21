@@ -8,7 +8,6 @@ import flask_login
 import pymysql
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Length, Email
-
 import model
 from model import model_
 from werkzeug import generate_password_hash, check_password_hash
@@ -44,7 +43,7 @@ def signIn():
     if user:
         session['user'] = _login
         sid = str(uuid.uuid4())
-        if (_password== user.haslo):
+        if (check_password_hash(user.haslo, _password)):
             #print('haslo przeszlo')
             #login_user(user)
             return redirect('/')
@@ -63,7 +62,7 @@ def signUp():
     _email = request.form['email']
     _password = request.form['password']
     _hashed_password = generate_password_hash(_password)
-    new_user = model.Klient(imie = _imie, nazwisko = _nazwisko , login=_login, email=_email, haslo=_password)
+    new_user = model.Klient(imie = _imie, nazwisko = _nazwisko , login=_login, email=_email, haslo=_hashed_password)
     db.session.add(new_user)
     db.session.commit()
     return redirect('/userCreated')
