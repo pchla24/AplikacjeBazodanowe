@@ -364,7 +364,7 @@ INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, 
 	AND m.Nazwa_marki = 'Pin Up';
 
 
--- Produkt
+-- Produkt - Rower
 
 INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
 	SELECT r.Nazwa_roweru, k.id, r.id, 500
@@ -519,6 +519,225 @@ INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Rower_id, Cena)
 	CROSS JOIN Rower AS r
 	WHERE k.Nazwa_kategorii = 'rower'
 	AND r.id = 22;
+    
+    
+-- Produkt - Rama
+
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Mitori', k.id, 100
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Ranger', k.id, 200
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Shannon', k.id, 250
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Tormenta Lady', k.id, 150
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Volt', k.id, 300
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Nordkapp', k.id, 450
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kettler Peak Lady', k.id, 150
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Unity Apex', k.id, 250
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'rama';
+    
+
+-- Produkt - Kierownice
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Le Grand Ergo', k.id, 150
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Le Grand Force', k.id, 250
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Le Grand Road', k.id, 200
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda Ozero TT', k.id, 100
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda Carbon', k.id, 450
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda Basic', k.id, 50
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Mitas Crossroad', k.id, 200
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Mitas Ergotec', k.id, 150
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'kierownica';
+    
+
+-- Produkt - Siodełka
+
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Burghardt Athletic', k.id, 50
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Burghardt Moderate', k.id, 60
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Burghardt Ellipse', k.id, 40
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Burghardt Italia', k.id, 80
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Fulcrum Sportouer', k.id, 50
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Fulcrum Relaxed Sky', k.id, 30
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Fulcrum Relaxed Viento', k.id, 20
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Pin Up Grappa', k.id, 20
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'siodełko';
+    
+    
+-- Produkt - Koła
+
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Pin Up Spline', k.id, 300
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Pin Up Passion', k.id, 200
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Pin Up Thru', k.id, 150
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Pin Up Crossride', k.id, 320
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Country', k.id, 240
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Accent Novatec', k.id, 80
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kettler Joytech', k.id, 350
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kettler Swift', k.id, 170
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'koło';
+    
+    
+-- Produkt - Opony
+
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Continental Burt', k.id, 27
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Continental Standard', k.id, 15
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Continental Compact', k.id, 17
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda Khan', k.id, 25
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda K898', k.id, 30
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Kenda Thunder', k.id, 40
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Continental Tour', k.id, 35
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
+	SELECT 'Continental Slim', k.id, 50
+    FROM Kategoria as k
+    WHERE k.Nazwa_kategorii = 'opona';
+    
+
+    
+
     
     
     
