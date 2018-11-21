@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe683c7-b6a9-40e7-8442-8a80829c47f7" name="Default" comment="" />
+    <list default="true" id="cbe683c7-b6a9-40e7-8442-8a80829c47f7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
+      <change beforePath="$PROJECT_DIR$/rowery_create.sql" afterPath="$PROJECT_DIR$/rowery_create.sql" />
+      <change beforePath="$PROJECT_DIR$/templates/stores.html" afterPath="$PROJECT_DIR$/templates/stores.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,15 +15,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AplikacjeBazodanowe$AplikacjeBazodanowe.coverage" NAME="AplikacjeBazodanowe Coverage Results" MODIFIED="1542825941804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/AplikacjeBazodanowe$AplikacjeBazodanowe.coverage" NAME="AplikacjeBazodanowe Coverage Results" MODIFIED="1542836245731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="126" column="28" lean-forward="true" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+            <state relative-caret-position="477">
+              <caret line="131" column="25" lean-forward="false" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -29,8 +34,8 @@
       <file leaf-file-name="category_template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/category_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="7" />
+            <state relative-caret-position="357">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="46" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -39,8 +44,8 @@
       <file leaf-file-name="stores.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/stores.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            <state relative-caret-position="408">
+              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -96,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rowery_create.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rowery_create.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rowery_create.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8419">
-              <caret line="527" column="4" lean-forward="false" selection-start-line="527" selection-start-column="4" selection-end-line="527" selection-end-column="4" />
+            <state relative-caret-position="477">
+              <caret line="737" column="0" lean-forward="true" selection-start-line="737" selection-start-column="0" selection-end-line="737" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,9 +142,9 @@
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/model.py" />
-        <option value="$PROJECT_DIR$/rowery_create.sql" />
         <option value="$PROJECT_DIR$/templates/stores.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/rowery_create.sql" />
       </list>
     </option>
   </component>
@@ -258,7 +263,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -437,30 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/category_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rowery_create.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8419">
-          <caret line="527" column="4" lean-forward="false" selection-start-line="527" selection-start-column="4" selection-end-line="527" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/stores.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/userCreated.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -479,13 +460,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/category_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/stores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="126" column="28" lean-forward="true" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+        <state relative-caret-position="477">
+          <caret line="131" column="25" lean-forward="false" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rowery_create.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="737" column="0" lean-forward="true" selection-start-line="737" selection-start-column="0" selection-end-line="737" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

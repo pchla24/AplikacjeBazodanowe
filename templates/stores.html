@@ -27,9 +27,9 @@
         <input class="search_bar" type="text" name="search" placeholder="Wyszukaj miasta..."><button type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
       </form>
     </div>
-    <ul class="stores_list">
-      {% for store in stores %}
-        <li><a href="stores"><button class="product_elem_btn"><span class="product_list_name">{{store.adres}}</span><span class="product_list_price">{{store.miasto}}</span></button></a></li>
+    <ul class="product_list">
+      {% for product in productList %}
+        <li><a href=""><button class="product_elem_btn"><span class="product_list_name">{{product.nazwa_produktu}}</span><span class="product_list_price">{{product.cena}}</span></button></a></li>
       {% endfor %}
     </ul>
   </div>

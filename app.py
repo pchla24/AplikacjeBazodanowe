@@ -127,12 +127,11 @@ def product_template(product_id):
 @app.route('/stores')
 def stores():
     stores = model.LokalizacjaSklepu.query.all()
-    return render_template('stores.html')
-
+    return render_template('stores.html', productList = stores)
+@app.route('/searchStores?search=<string:miasto>')
 def searchStores(miasto):
-    stores = model.LokalizacjaSklepu.query.filter_by(miasto = miasto)
-    print("ok" + miasto)
-    return stores
+    stores = model.LokalizacjaSklepu.query.filter_by(miasto = miasto).first()
+    return render_template('stores.html', productName = miasto)
 @app.route('/logout')
 def logout():
     userToLogout = session['user']

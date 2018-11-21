@@ -736,6 +736,10 @@ INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
     WHERE k.Nazwa_kategorii = 'opona';
     
 
+INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
+	SELECT '02777', '555666777', 'ul.Grochowska 7', m.id
+    FROM Miasto AS m
+    WHERE m.Nazwa = 'Warszawa';
     
 
     
