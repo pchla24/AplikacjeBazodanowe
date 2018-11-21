@@ -22,18 +22,22 @@
   </header>
 	<div id="product_content">
 		<div class="product_name">
-			<h2>Nazwa produktu</h2>
+			<h2>{{productName}}</h2>
 		</div>
 		<div class="product_view">
 			<div class="product_image">
 				<img src="../static/images/imageNotFound.jpg" alt="image" class="productPic">
 			</div>
 			<div class="product_properties">
-				Kategoria: 
+				Producent: {{brand}}
 				<br /><br />
-				Rodzaj
+				Kategoria: {{category}}
 				<br /><br />
-				Cena:
+				Średnica koła: {{diameter}}
+				<br /><br />
+				Rodzaj: {{type}}
+				<br /><br />
+				Cena: {{price}}
 				<br /><br />
 				<div><a href=""><button type="button" class="checkAvailButton">Sprawdź dostępność</button></a></div>
 				<div><a href=""><button type="button" class="addToCartButton">Dodaj do koszyka</button></a></div>

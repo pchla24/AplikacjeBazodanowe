@@ -112,9 +112,17 @@ def makeOrder():
 def userCreated():
     return render_template('userCreated.html')
 
-@app.route('/product_template')
-def product_template():
-    return render_template('product_template.html')
+@app.route('/product/<int:product_id>')
+def product_template(product_id):
+    productObj = model.Produkt.query.filter_by(id=product_id).first()
+    categoryObj = model.Kategoria.query.filter_by(id=productObj.kategoria_id).first()
+    if categoryObj.nazwa_kategorii == 'rower':
+        bikeObj = model.Rower.query.filter_by(id=productObj.rower_id).first()
+        typeObj = model.RodzajRoweru.query.filter_by(id=bikeObj.rodzaj_roweru_id).first()
+        brandObj = model.Marka.query.filter_by(id=bikeObj.marka_id).first()
+        return render_template('product_template.html', productName=productObj.nazwa_produktu, brand=brandObj.nazwa_marki, category=categoryObj.nazwa_kategorii, diameter=bikeObj.srednica_kola, price=productObj.cena,  type=typeObj.rodzaj)
+
+    return render_template('product_template.html', productName=productObj.nazwa_produktu, brand='nie dotyczy', category=categoryObj.nazwa_kategorii, diameter='nie dotyczy', price=productObj.cena,  type='nie dotyczy')
 
 @app.route('/stores')
 def stores():
