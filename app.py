@@ -8,14 +8,14 @@ import flask_login
 import pymysql
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Length, Email
-import model
-from model import model_
 from werkzeug import generate_password_hash, check_password_hash
 app = Flask(__name__)
-app.register_blueprint(model_)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sklep:sklep@localhost:3306/sklep_rowerowy'
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
+import model
+from model import model_
+app.register_blueprint(model_)
 app.config['SECRET_KEY'] = 'fghjmkfrihffrhr'
 login_manager = LoginManager()
 login_manager.init_app(app)
