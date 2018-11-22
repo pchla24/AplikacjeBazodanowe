@@ -112,7 +112,7 @@ def makeOrder():
 def userCreated():
     return render_template('userCreated.html')
 
-@app.route('/product/<int:product_id>')
+@app.route('/product<int:product_id>')
 def product_template(product_id):
     productObj = model.Produkt.query.filter_by(id=product_id).first()
     categoryObj = model.Kategoria.query.filter_by(id=productObj.kategoria_id).first()
@@ -132,7 +132,7 @@ def stores():
 @app.route('/searchStores?search=<string:miasto>')
 def searchStores(miasto):
     stores = model.LokalizacjaSklepu.query.filter_by(miasto = miasto).first()
-    return render_template('stores.html', productName = miasto)
+    return render_template('stores.html', productList = stores)
 @app.route('/logout')
 def logout():
     userToLogout = session['user']
