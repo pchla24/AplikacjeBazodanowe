@@ -47,7 +47,7 @@ def signIn():
             #print('haslo przeszlo')
             #login_user(user)
             return redirect('/')
-    return '<h1>Invalid username or password</h1>'
+    return render_template('wronglogin.html')
 
 @app.route('/register')
 def register():
