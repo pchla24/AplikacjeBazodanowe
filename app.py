@@ -1,7 +1,7 @@
 import uuid
 
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 import flask_login
@@ -45,7 +45,7 @@ def signIn():
         sid = str(uuid.uuid4())
         if (check_password_hash(user.haslo, _password)):
             #print('haslo przeszlo')
-            #login_user(user)
+            login_user(user)
             return redirect('/')
     return render_template('wronglogin.html')
 
