@@ -127,6 +127,7 @@ def product_template(product_id):
 @app.route('/stores')
 def stores():
     stores = model.LokalizacjaSklepu.query.all()
+#    print(stores)
     return render_template('stores.html', productList = stores)
 @app.route('/searchStores?search=<string:miasto>')
 def searchStores(miasto):
