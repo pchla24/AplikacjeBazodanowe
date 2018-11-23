@@ -14,9 +14,15 @@
 			<a href="/"><img src="../static/images/logoRowery.png" alt="logo" id="logo"/></a>
 			<nav>
 				<ul>
-					<li><a href="stores">Nasze sklepy</a></li>
-					<li><a href="login">Zaloguj się</a></li>
-					<li><a href="register">Zarejestruj się</a></li>
+					{% if current_user.is_authenticated %}
+						<li><a href="stores">Nasze sklepy</a></li>
+						<li><a href="cart">Koszyk</a></li>
+						<li><a href="logout">Wyloguj</a></li>
+					{% else %}
+						<li><a href="stores">Nasze sklepy</a></li>
+						<li><a href="login">Zaloguj się</a></li>
+						<li><a href="register">Zarejestruj się</a></li>
+					{% endif %}
 				</ul>
 			</nav>
 		</div>
@@ -27,8 +33,9 @@
         <input class="search_bar" type="text" name="search" placeholder="Wyszukaj..."><button type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
       </form>
     </div>
+    <h1 class="categoryName">{{categoryName}}</h1>
     <div class="category_filter">
-      <form method="POST" action="">
+      <form action="">
         <div class="priceFilterInputs">
           <label for="price-min">Cena min:</label>
           <input type="number" name="price-min" id="price-min" value="200" min="0" max="1000">

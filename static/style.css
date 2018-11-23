@@ -348,6 +348,10 @@ input[type=submit]:hover {
   margin-top: 110px;
 }
 
+.categoryName {
+  margin-left: 20%;
+}
+
 .search_container {
   text-align: center;
   background-color: #e9e9e9;

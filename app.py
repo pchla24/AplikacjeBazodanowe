@@ -72,35 +72,99 @@ def signUp():
 
 @app.route('/bikes')
 def bikes():
-    # To zapytanie nie musi być takie długie ale chyba poprawnie wyciąga wszystkie dane o produkcie z bazy
-    #bikes = model.Produkt.query.join(model.Rower, model.Produkt.rower_id == model.Rower.id).join(model.RodzajRoweru, model.Rower.rodzaj_roweru_id == model.RodzajRoweru.id).join(model.Marka, model.Rower.marka_id == model.Marka.id).all()
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        bikes = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rower').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=bikes, categoryName="Rowery")
+
+    if priceMin != '':
+        bikes = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rower').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=bikes, categoryName="Rowery")
+
     bikes = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rower')
-    return render_template('category_template.html', productList=bikes)
+    return render_template('category_template.html', productList=bikes, categoryName="Rowery")
 
 @app.route('/frames')
 def frames():
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        frames = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rama').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=frames, categoryName="Ramy")
+
+    if priceMin != '':
+        frames = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rama').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=frames, categoryName="Ramy")
+
     frames = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='rama')
-    return render_template('category_template.html', productList=frames)
+    return render_template('category_template.html', productList=frames, categoryName="Ramy")
 
 @app.route('/handlebars')
 def handlebars():
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        handlebars = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='kierownica').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=handlebars, categoryName="Kierownice")
+
+    if priceMin != '':
+        handlebars = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='kierownica').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=handlebars, categoryName="Kierownice")
+
     handlebars = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='kierownica')
-    return render_template('category_template.html', productList=handlebars)
+    return render_template('category_template.html', productList=handlebars, categoryName="Kierownice")
 
 @app.route('/saddles')
 def saddles():
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        saddles = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='siodełko').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=saddles, categoryName="Siodełka")
+
+    if priceMin != '':
+        saddles = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='siodełko').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=saddles, categoryName="Siodełka")
+
     saddles = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='siodełko')
-    return render_template('category_template.html', productList=saddles)
+    return render_template('category_template.html', productList=saddles, categoryName="Siodełka")
 
 @app.route('/wheels')
 def wheels():
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        wheels = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='koło').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=wheels, categoryName="Koła")
+
+    if priceMin != '':
+        wheels = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='koło').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=wheels, categoryName="Koła")
+
     wheels = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='koło')
-    return render_template('category_template.html', productList=wheels)
+    return render_template('category_template.html', productList=wheels, categoryName="Koła")
 
 @app.route('/tyres')
 def tyres():
+    textToFind = request.args.get('search', '')
+    priceMin = request.args.get('price-min', '')
+    priceMax = request.args.get('price-max', '')
+    if textToFind != '':
+        tyres = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='opona').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%"))
+        return render_template('category_template.html', productList=tyres, categoryName="Opony")
+
+    if priceMin != '':
+        tyres = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='opona').filter(model.Produkt.cena.between(priceMin, priceMax))
+        return render_template('category_template.html', productList=tyres, categoryName="Opony")
+
     tyres = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='opona')
-    return render_template('category_template.html', productList=tyres)
+    return render_template('category_template.html', productList=tyres, categoryName="Opony")
 
 @app.route('/cart')
 def cart():

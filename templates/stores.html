@@ -14,9 +14,15 @@
 			<a href="/"><img src="../static/images/logoRowery.png" alt="logo" id="logo"/></a>
 			<nav>
 				<ul>
-					<li><a href="stores">Nasze sklepy</a></li>
-					<li><a href="login">Zaloguj się</a></li>
-					<li><a href="register">Zarejestruj się</a></li>
+					{% if current_user.is_authenticated %}
+						<li><a href="stores">Nasze sklepy</a></li>
+						<li><a href="cart">Koszyk</a></li>
+						<li><a href="logout">Wyloguj</a></li>
+					{% else %}
+						<li><a href="stores">Nasze sklepy</a></li>
+						<li><a href="login">Zaloguj się</a></li>
+						<li><a href="register">Zarejestruj się</a></li>
+					{% endif %}
 				</ul>
 			</nav>
 		</div>
