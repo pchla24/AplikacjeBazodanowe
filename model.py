@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Length, Email
-
+from flask_login import UserMixin
 model_ = Blueprint('model_', __name__)
 
 import sqlalchemy
@@ -12,7 +12,6 @@ from sqlalchemy import Column, Integer, BigInteger, String, ForeignKey, Unicode,
 from sqlalchemy.orm import relationship, backref, deferred
 from sqlalchemy.orm import sessionmaker
 from app import db
-
 
 
 class Produkt (db.Model):
@@ -106,7 +105,7 @@ class Pracownik (db.Model):
 
     lokalizacja_sklepu = relationship('LokalizacjaSklepu', foreign_keys=lokalizacja_sklepu_id)
 
-class Klient (db.Model):
+class Klient (db.Model, UserMixin):
     __tablename__ = "Klient"
     id = Column('id', Integer, primary_key = True)
     imie = Column('Imie', Unicode)

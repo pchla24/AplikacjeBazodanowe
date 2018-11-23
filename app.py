@@ -1,7 +1,7 @@
 import uuid
-
+#from flask.ext.login import UserMixin
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_login import LoginManager, login_user, current_user
+from flask_login import LoginManager, login_user, current_user, UserMixin, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 import flask_login
@@ -41,12 +41,8 @@ def signIn():
  #   if form.validate_on_submit():
     user = model.Klient.query.filter_by(login=_login).first()
     if user:
-        session['user'] = _login
-        sid = str(uuid.uuid4())
-        session['sid'] = sid
         if (check_password_hash(user.haslo, _password)):
-            #print('haslo przeszlo')
-            #login_user(user)
+            login_user(user)
             return redirect('/')
     return render_template('wronglogin.html')
 
@@ -136,10 +132,7 @@ def searchStores(miasto):
     return render_template('stores.html', productList = stores)
 @app.route('/logout')
 def logout():
-    userToLogout = session['user']
-    sidToLogout = session['sid']
-    session.pop('user', None)
-    session.pop('sid', None)
+    logout_user()
     return redirect('/')
 
 if __name__ == '__main__':
