@@ -43,9 +43,10 @@ def signIn():
     if user:
         session['user'] = _login
         sid = str(uuid.uuid4())
+        session['sid'] = sid
         if (check_password_hash(user.haslo, _password)):
             #print('haslo przeszlo')
-            login_user(user)
+            #login_user(user)
             return redirect('/')
     return render_template('wronglogin.html')
 
