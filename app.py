@@ -56,7 +56,13 @@ def signUp():
     _imie = request.form['imie']
     _nazwisko = request.form['nazwisko']
     _login = request.form['login']
+    login = model.Klient.query.filter_by(login=_login).first()
+    if login:
+        return render_template('wrongregister.html')
     _email = request.form['email']
+    email = model.Klient.query.filter_by(email = _email).first()
+    if email:
+        return render_template('wrongregister.html')
     _password = request.form['password']
     _hashed_password = generate_password_hash(_password)
     new_user = model.Klient(imie = _imie, nazwisko = _nazwisko , login=_login, email=_email, haslo=_hashed_password)
