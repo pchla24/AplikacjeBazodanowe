@@ -39,6 +39,15 @@ class ZamowieniePozycja (db.Model):
     produkt = relationship('Produkt', foreign_keys=produkt_id)
     zamowienie = relationship('Zamowienie', foreign_keys=zamowienie_id)
 
+class KoszykPozycja (db.Model):
+    __tablename__ = "Koszyk_pozycja"
+    id = Column('id', Integer, primary_key = True)
+    produkt_id = Column('Produkt_id', Integer, ForeignKey('Produkt.id'))
+    koszyk_id = Column('Koszyk_id', Integer, ForeignKey('Koszyk.id'))
+
+    produkt = relationship('Produkt', foreign_keys=produkt_id)
+    koszyk = relationship('Koszyk', foreign_keys=koszyk_id)
+
 class RodzajRoweru (db.Model):
     __tablename__ = "Rodzaj_roweru"
     id = Column('id', Integer, primary_key = True)
@@ -93,6 +102,13 @@ class Zamowienie (db.Model):
     klient_id = Column('Klient_id', Integer, ForeignKey('Klient.id'))
 
     lokalizacja_sklepu = relationship('LokalizacjaSklepu', foreign_keys=lokalizacja_sklepu_id)
+    klient = relationship('Klient', foreign_keys=klient_id)
+
+class Koszyk (db.Model):
+    __tablename__ = "Koszyk"
+    id = Column('id', Integer, primary_key = True)
+    klient_id = Column('Klient_id', Integer, ForeignKey('Klient.id'))
+
     klient = relationship('Klient', foreign_keys=klient_id)
 
 class Pracownik (db.Model):
