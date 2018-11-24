@@ -122,7 +122,35 @@ CREATE TABLE Zamowienie_pozycja (
     CONSTRAINT Zamowienie_pozycja_pk PRIMARY KEY (id)
 );
 
+CREATE TABLE Koszyk (
+    id int NOT NULL AUTO_INCREMENT,
+    Klient_id int NOT NULL,
+    CONSTRAINT Koszyk_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE Koszyk_pozycja (
+    id int NOT NULL AUTO_INCREMENT,
+    Produkt_id int NOT NULL,
+    Koszyk_id int NOT NULL,
+    CONSTRAINT Koszyk_pozycja_pk PRIMARY KEY (id)
+);
+
+
 -- foreign keys
+
+
+-- Reference: Koszyk_pozycja_Produkt (table: Koszyk_pozycja)
+ALTER TABLE Koszyk_pozycja ADD CONSTRAINT Koszyk_pozycja_Produkt FOREIGN KEY Koszyk_pozycja_Produkt (Produkt_id)
+    REFERENCES Produkt (id);
+
+-- Reference: Koszyk_pozycja_Zamowienie (table: Koszyk_pozycja)
+ALTER TABLE Koszyk_pozycja ADD CONSTRAINT Koszyk_pozycja_Zamowienie FOREIGN KEY Koszyk_pozycja_Zamowienie (Koszyk_id)
+    REFERENCES Koszyk (id);
+
+-- Reference: Koszyk_Klient (table: Koszyk_)
+ALTER TABLE Koszyk ADD CONSTRAINT Koszyk_Klient FOREIGN KEY Koszyk_Klient (Klient_id)
+    REFERENCES Klient (id);
+
 -- Reference: Lokalizacja_sklepu_Miasto (table: Lokalizacja_sklepu)
 ALTER TABLE Lokalizacja_sklepu ADD CONSTRAINT Lokalizacja_sklepu_Miasto FOREIGN KEY Lokalizacja_sklepu_Miasto (Miasto_id)
     REFERENCES Miasto (id);
