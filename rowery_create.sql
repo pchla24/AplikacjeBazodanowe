@@ -203,12 +203,12 @@ ALTER TABLE Zamowienie_pozycja ADD CONSTRAINT Zamowienie_pozycja_Zamowienie FORE
 -- Przykładowe rekordy
 
 -- Kategoria
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('rower');
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('rama');
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('kierownica');
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('siodełko');
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('koło');
-INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('opona');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Rower');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Rama');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Kierownica');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Siodełko');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Koło');
+INSERT INTO Kategoria (Nazwa_kategorii) VALUES ('Opona');
 
 -- Marka
 INSERT INTO Marka (Nazwa_marki) VALUES ('Kettler');
@@ -238,154 +238,154 @@ INSERT INTO Rodzaj_roweru (Rodzaj) VALUES ('Elektryczny');
 
 -- Rower
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Lola Evo', 26, 'Lola Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Lola Evo'), 26, 'Lola Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Pin Up';
 	
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Traveller 4', 25, 'Traveller 4',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Traveller 4'), 25, 'Traveller 4',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Kettler';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'City Cruiser Comfort', 24, 'City Cruiser Comfort',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'City Cruiser Comfort'), 24, 'City Cruiser Comfort',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Kettler';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Glider', 26, 'Glider',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Glider'), 26, 'Glider',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Elektryczny'
 	AND m.Nazwa_marki = 'Kettler';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Monster', 27, 'Monster',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Monster'), 27, 'Monster',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Górski'
 	AND m.Nazwa_marki = 'Accent';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Shark', 26, 'Shark',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Shark'), 26, 'Shark',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Szosowy'
 	AND m.Nazwa_marki = 'Accent';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Daisy 2', 25, 'Daisy 2',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Daisy 2'), 25, 'Daisy 2',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Accent';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Julia', 25, 'Julia',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Julia'), 25, 'Julia',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Kettler';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Freeliner', 26, 'Freeliner',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Freeliner'), 26, 'Freeliner',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Accent';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Berlin Cargo', 28, 'Berlin Cargo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Berlin Cargo'), 28, 'Berlin Cargo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Kettler';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Madison', 25, 'Madison',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Madison'), 25, 'Madison',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Le Grand';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Sanibel', 24, 'Sanibel',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Sanibel'), 24, 'Sanibel',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Le Grand';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'William', 26, 'William',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'William'), 26, 'William',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Le Grand';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Swan', 26, 'Swan',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Swan'), 26, 'Swan',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Burghardt';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Race Star', 28, 'Race Star',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Race Star'), 28, 'Race Star',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Górski'
 	AND m.Nazwa_marki = 'Burghardt';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Varsovia', 26, 'Varsovia',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Varsovia'), 26, 'Varsovia',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Elektryczny'
 	AND m.Nazwa_marki = 'Unity';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Mosca', 25, 'Mosca',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Mosca'), 25, 'Mosca',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Elektryczny'
 	AND m.Nazwa_marki = 'Unity';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Jasmine Evo', 26, 'Jasmine Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Jasmine Evo'), 26, 'Jasmine Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
 	AND m.Nazwa_marki = 'Pin Up';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Nadie Evo', 27, 'Nadie Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Nadie Evo'), 27, 'Nadie Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Cruiser'
 	AND m.Nazwa_marki = 'Pin Up';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Gina Evo', 28, 'Gina Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Gina Evo'), 28, 'Gina Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Szosowy'
 	AND m.Nazwa_marki = 'Pin Up';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Stella Evo', 26, 'Stella Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Stella Evo'), 26, 'Stella Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Elektryczny'
 	AND m.Nazwa_marki = 'Pin Up';
     
 INSERT INTO Rower (Nazwa_roweru, Srednica_kola, Nazwa_modelu, Rodzaj_roweru_id, Marka_id)
-	SELECT 'Holy Evo', 26, 'Holy Evo',  r.id, m.id
+	SELECT CONCAT(m.Nazwa_marki, ' ', 'Holy Evo'), 26, 'Holy Evo',  r.id, m.id
 	FROM Rodzaj_roweru AS r
 	CROSS JOIN Marka AS m
 	WHERE r.Rodzaj = 'Miejski'
