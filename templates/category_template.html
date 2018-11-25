@@ -34,6 +34,19 @@
       </form>
     </div>
     <h1 class="categoryName">{{categoryName}}</h1>
+        <div class="category_filter">
+      <form action="">
+        <div class="priceFilterInputs">
+          <label for="price-min">Cena min:</label>
+          <input type="number" name="price-min" id="price-min" value="200" min="0" max="1000">
+          <br>
+          <label for="price-max">Cena max:</label>
+          <input type="number" name="price-max" id="price-max" value="800" min="0" max="1000">
+        </div>
+        <br>
+        <input type="submit" id="priceFilterSubmit" value="Filtruj">
+      </form>
+    </div>
     <ul class="product_list">
       {% for product in productList %}
         <li><a href="product{{product.id}}"><button class="product_elem_btn"><span class="product_list_name">{{product.nazwa_produktu}}</span><span class="product_list_price">{{product.cena}}</span></button></a></li>

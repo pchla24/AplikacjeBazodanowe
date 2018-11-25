@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbe683c7-b6a9-40e7-8442-8a80829c47f7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change beforePath="$PROJECT_DIR$/rowery_create.sql" afterPath="$PROJECT_DIR$/rowery_create.sql" />
       <change beforePath="$PROJECT_DIR$/templates/category_template.html" afterPath="$PROJECT_DIR$/templates/category_template.html" />
-      <change beforePath="$PROJECT_DIR$/templates/order.html" afterPath="$PROJECT_DIR$/templates/order.html" />
-      <change beforePath="$PROJECT_DIR$/templates/stores.html" afterPath="$PROJECT_DIR$/templates/stores.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -95,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category_template.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="category_template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/category_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
+            <state relative-caret-position="455">
+              <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -148,13 +143,13 @@
         <option value="$PROJECT_DIR$/templates/product_template.html" />
         <option value="$PROJECT_DIR$/templates/wrongregister.html" />
         <option value="$PROJECT_DIR$/model.py" />
-        <option value="$PROJECT_DIR$/templates/category_template.html" />
         <option value="$PROJECT_DIR$/templates/stores.html" />
         <option value="$PROJECT_DIR$/templates/store_template.html" />
         <option value="$PROJECT_DIR$/rowery_create.sql" />
         <option value="$PROJECT_DIR$/templates/order.html" />
         <option value="$PROJECT_DIR$/templates/order_summary.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/category_template.html" />
       </list>
     </option>
   </component>
@@ -643,14 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/category_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/product_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -724,6 +711,14 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/category_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
