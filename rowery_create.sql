@@ -765,9 +765,31 @@ INSERT INTO Produkt (Nazwa_produktu, Kategoria_id, Cena)
     
 
 INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
-	SELECT '02777', '555666777', 'ul.Grochowska 7', m.id
+	SELECT '02777', '555666777', 'ul.Grochowska 7, Warszawa', m.id
     FROM Miasto AS m
     WHERE m.Nazwa = 'Warszawa';
+
+
+INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
+	SELECT '35666', '555666765', 'ul.Kopernika 3, Toruń', m.id
+    FROM Miasto AS m
+    WHERE m.Nazwa = 'Toruń';
+
+
+INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
+	SELECT '15676', '535646775', 'ul.Portowa 4, Gdańsk', m.id
+    FROM Miasto AS m
+    WHERE m.Nazwa = 'Gdańsk';
+
+INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
+	SELECT '18888', '995656795', 'ul.Warszawska 136, Wrocław', m.id
+    FROM Miasto AS m
+    WHERE m.Nazwa = 'Wrocław';
+
+INSERT INTO Lokalizacja_sklepu(kod_pocztowy, telefon, adres, Miasto_id)
+	SELECT '88675', '987453761', 'ul.Sukiennice 1, Kraków', m.id
+    FROM Miasto AS m
+    WHERE m.Nazwa = 'Kraków';
     
 
     

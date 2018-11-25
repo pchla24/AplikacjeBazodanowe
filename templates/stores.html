@@ -29,13 +29,14 @@
   </header>
 	<div class="category_content">
     <div class="search_container">
-      <form action="searchStores">
-        <input class="search_bar" type="text" name="search" placeholder="Wyszukaj miasta..."><button type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
+      <form action="">
+        <input class="search_bar" type="text" name="search" placeholder="Wyszukaj..."><button type="submit" value="Szukaj"><i class="fa fa-search"></i></button>
       </form>
     </div>
+    <h1 class="categoryName">{{categoryName}}</h1>
     <ul class="product_list">
       {% for product in productList %}
-        <li><a href=""><button class="product_elem_btn"><span class="product_list_name">{{product.adres}}</span></button></a></li>
+        <li><button class="product_elem_btn"><span class="product_list_name">{{product.adres}}</span></button></li>
       {% endfor %}
     </ul>
   </div>

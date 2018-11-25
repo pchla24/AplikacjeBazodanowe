@@ -194,9 +194,37 @@ def removeFromCart():
     db.session.commit()
     return redirect('/cart')
 
-@app.route('/makeOrder')
+def clearCart():
+    currentCart = model.Koszyk.query.filter_by(klient_id=current_user.id).first()
+    currentCartID = currentCart.id
+    currentCartItems = model.KoszykPozycja.query.filter_by(koszyk_id=currentCartID)
+    for i in currentCartItems:
+        db.session.delete(i)
+        db.session.commit()
+
+@app.route('/makeOrder', methods = ['GET', 'POST'])
 def makeOrder():
-    return render_template('order.html')
+    stores = model.LokalizacjaSklepu.query.all()
+    return render_template('order.html', productList = stores)
+
+@app.route('/order', methods=['GET','POST'])
+def order():
+    _miasto = request.form.get('miasto')
+    print(_miasto)
+    _lokalizacja = model.LokalizacjaSklepu.query.filter_by(adres=_miasto).first()
+    currentCart = model.Koszyk.query.filter_by(klient_id=current_user.id).first()
+    order = model.Zamowienie(lokalizacja_sklepu_id = _lokalizacja.id, klient_id=current_user.id)
+    db.session.add(order)
+    db.session.commit()
+    currentCartID = currentCart.id
+    if request.method == 'POST':
+         currentCartItems = model.KoszykPozycja.query.filter_by(koszyk_id = currentCartID)
+         for i in currentCartItems:
+             orderItem = model.ZamowieniePozycja(produkt_id=i.produkt_id , zamowienie_id = order.id)
+             db.session.add(orderItem)
+             db.session.commit()
+    clearCart()
+    return render_template('order_summary.html')
 
 # do testowania czy poprawnie wyświetla
 @app.route('/userCreated')
@@ -217,13 +245,13 @@ def product_template(product_id):
 
 @app.route('/stores')
 def stores():
+    textToFind = request.args.get('search', '')
+    if textToFind != '':
+        stores = model.LokalizacjaSklepu.query.join(model.Miasto, model.LokalizacjaSklepu.miasto_id == model.Miasto.id).filter(model.Miasto.nazwa.ilike("%" + textToFind + "%"))
+        return render_template('stores.html', productList=stores, categoryName="Nasze sklepy")
     stores = model.LokalizacjaSklepu.query.all()
 #    print(stores)
-    return render_template('stores.html', productList = stores)
-@app.route('/searchStores?search=<string:miasto>')
-def searchStores(miasto):
-    stores = model.LokalizacjaSklepu.query.filter_by(miasto = miasto).first()
-    return render_template('stores.html', productList = stores)
+    return render_template('stores.html', productList = stores, categoryName = "Nasze sklepy")
 @app.route('/logout')
 def logout():
     logout_user()

@@ -25,21 +25,18 @@
 						</nav>
 					</div>
 				</header>
+
 				<div id="orderFormContainer">
-						<form method="POST" action="">
+                    <form method="POST" action="/order">
+
               <label for="receiptLocalization">Wybierz miejsce odbioru zamówienia</label><br />
-							<select name="receiptLocalization">
-                <!--
-                  Dane testowe, tu będzie for po liście lokalizacji sklepów
-                -->
-                <option value="Warszawa">Warszawa</option>
-                <option value="Kraków">Kraków</option>
-                <option value="Gdańsk">Gdańsk</option>
-                <option value="Wrocław">Wrocław</option>
-                <option value="Toruń">Toruń</option>
+							<select name="miasto">
+                                  {% for product in productList %}
+        <option><span class="product_list_name">{{product.adres}}</span></option>
+      {% endfor %}
               </select>
               <br><br>
-							<input type="submit" id="ordersubmit" value="Płacę i zamawiam">
+                        <input type="submit" id="ordersubmit" value="Płacę i zamawiam">
 						</form>
 				</div>
 <!--
