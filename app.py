@@ -74,6 +74,17 @@ def signUp():
     db.session.commit()
 
     return redirect('/userCreated')
+@app.route('/deleteProduct', methods=['GET', 'POST'])
+def deleteProduct():
+    if request.method == 'POST':
+        productID = request.form['idOfProduct']
+        product = model.Produkt.query.filter_by(id = productID).first()
+        db.session.delete(product)
+        db.session.commit()
+    return render_template('productAdded.html')
+
+def updateProduct():
+    return 0
 
 @app.route('/addProduct', methods=['GET', 'POST'])
 def addProduct():
@@ -262,6 +273,10 @@ def product_template(product_id):
     categoryObj = model.Kategoria.query.filter_by(id=productObj.kategoria_id).first()
     if categoryObj.nazwa_kategorii == 'Rower':
         bikeObj = model.Rower.query.filter_by(id=productObj.rower_id).first()
+        if bikeObj is None:
+            return render_template('product_template.html', productName=productObj.nazwa_produktu,
+                                   category=categoryObj.nazwa_kategorii, diameter='nie dotyczy', price=productObj.cena,
+                                   type='nie dotyczy', id_of_product=productObj.id)
         typeObj = model.RodzajRoweru.query.filter_by(id=bikeObj.rodzaj_roweru_id).first()
         brandObj = model.Marka.query.filter_by(id=bikeObj.marka_id).first()
         return render_template('product_template.html', productName=productObj.nazwa_produktu, category=categoryObj.nazwa_kategorii, diameter=bikeObj.srednica_kola, price=productObj.cena,  type=typeObj.rodzaj, id_of_product=productObj.id)
