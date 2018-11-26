@@ -74,7 +74,33 @@ def signUp():
     db.session.commit()
 
     return redirect('/userCreated')
+#
+# class Produkt (db.Model):
+#     __tablename__ = "Produkt"
+#     nazwa_produktu = Column('Nazwa_produktu', Unicode)
+#     id = Column('id', Integer, primary_key = True)
+#     kategoria_id = Column('Kategoria_id', Integer, ForeignKey('Kategoria.id'))
+#     rower_id = Column('Rower_id', Integer, ForeignKey('Rower.id'))
+#     cena = Column('Cena', BigInteger)
+#
+#     kategoria = relationship('Kategoria', foreign_keys=kategoria_id)
+#     rower = relationship('Rower', foreign_keys=rower_id)
+@app.route('/addProduct', methods=['GET', 'POST'])
+def addProduct():
+    _nazwa = request.form['nazwa_produktu']
+    _cena = request.form['cena']
+    _kategoria = request.form.get('kategoria')
+    kategoriaId = model.Kategoria.query.filter_by(nazwa_kategorii = _kategoria).first()
+    print("ok")
+    new_product = model.Produkt(nazwa_produktu = _nazwa, kategoria_id = kategoriaId.id, cena = _cena)
+    db.session.add(new_product)
+    db.session.commit()
+    return render_template('productAdded.html')
 
+@app.route('/newProductForm')
+def newProductForm():
+    categories = model.Kategoria.query.all()
+    return render_template('addProduct.html', categories = categories)
 @app.route('/bikes')
 def bikes():
     textToFind = request.args.get('search', '')

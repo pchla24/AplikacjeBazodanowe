@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../static/style.css" type="text/css"/>
+<title>Rowery</title>
+</head>
+	<body>
+			<header>
+					<div id="headContainer">
+						<a href="/"><img src="../static/images/logoRowery.png" alt="logo" id="logo"/></a>
+						<nav>
+							<ul>
+								<li><a href="logout">Wyloguj się</a></li>
+								<li><a href="register">Zarejestruj się</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+            <!--
+class Produkt (db.Model):
+    __tablename__ = "Produkt"
+    nazwa_produktu = Column('Nazwa_produktu', Unicode)
+    id = Column('id', Integer, primary_key = True)
+    kategoria_id = Column('Kategoria_id', Integer, ForeignKey('Kategoria.id'))
+    rower_id = Column('Rower_id', Integer, ForeignKey('Rower.id'))
+    cena = Column('Cena', BigInteger)
+
+    kategoria = relationship('Kategoria', foreign_keys=kategoria_id)
+    rower = relationship('Rower', foreign_keys=rower_id)
+            -->
+                <h1 class="category">{{category}}</h1>
+				<div id="regFormContainer">
+						<form method="POST"  action="/addProduct" onsubmit="return Validate()">
+
+                            <label for="nazwa_produktu">Nazwa produktu</label><br />
+							<input type="text" id="nazwa_profuktu" name="nazwa_produktu" placeholder="Nazwa produktu..."><br />
+							<div id="nazwa_error" class="reg_error"></div>
+
+                            <label for="cena">Cena</label><br />
+							<input type="text" id="cena" name="cena" placeholder="Cena..."><br />
+							<div id="cena_error" class="reg_error"></div>
+
+                             <label for="kategoria">Kategoria</label><br />
+                            <select name="kategoria">
+                                {% for category in categories %}
+                                    <option><span class="product_list_name">{{category.nazwa_kategorii}}</span></option>
+                            {% endfor %}
+                            </select>
+
+							<input type="submit" id="regsubmit" value="Dodaj produkt">
+
+						</form>
+				</div>
+<!--
+<footer>
+	<p class="stopka">jakiś footer</p>
+</footer>
+-->
+      <script type="text/javascript" src="../static/js/main.js"></script>
+    </body>
+</html>
