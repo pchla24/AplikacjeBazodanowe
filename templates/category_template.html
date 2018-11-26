@@ -38,20 +38,33 @@
       <form action="">
         <div class="priceFilterInputs">
           <label for="price-min">Cena min:</label>
-          <input type="number" name="price-min" id="price-min" value="200" min="0" max="1000">
+          <input type="number" name="priceMin" id="price-min" value="200" min="0" max="1000">
           <br>
           <label for="price-max">Cena max:</label>
-          <input type="number" name="price-max" id="price-max" value="800" min="0" max="1000">
+          <input type="number" name="priceMax" id="price-max" value="800" min="0" max="1000">
         </div>
         <br>
         <input type="submit" id="priceFilterSubmit" value="Filtruj">
       </form>
     </div>
     <ul class="product_list">
-      {% for product in productList %}
+      {% for product in productList.items %}
         <li><a href="product{{product.id}}"><button class="product_elem_btn"><span class="product_list_name">{{product.nazwa_produktu}}</span><span class="product_list_price">{{product.cena}}</span></button></a></li>
       {% endfor %}
     </ul>
+    <div class="pageList">
+      {% for page_num in productList.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+          {% if productList.page == page_num %}
+            <a class="currentPage" href="{{url_for(request.endpoint, search=request.args.get('search',''), priceMin=request.args.get('priceMin',''), priceMax=request.args.get('priceMax',''), page=page_num)}}">{{page_num}}</a>
+          {% else %}
+            <a href="{{url_for(request.endpoint, search=request.args.get('search',''), priceMin=request.args.get('priceMin',''), priceMax=request.args.get('priceMax',''), page=page_num)}}">{{page_num}}</a>
+          {% endif %}
+        {% else %}
+          ...
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 <!--
 <footer>

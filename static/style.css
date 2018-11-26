@@ -380,10 +380,11 @@ input[type=submit]:hover {
 
 .category_filter {
   display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
   width: 300px;
   height: 600px;
   padding-left: 2%;
-  margin-top: 20px;
   margin-bottom: 3%;
 }
 
@@ -412,11 +413,32 @@ input[type=submit]:hover {
 
 .product_list {
   display: inline-block;
-  position: absolute;
   margin-top: 20px;
   margin-bottom: 3%;
   width: 70%;
   list-style: none;
+}
+
+.pageList {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.pageList a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pageList a.currentPage {
+  background: #1c6835;
+  color: white;
+  border-radius: 5px;
+}
+
+.pageList a:hover:not(.currentPage) {
+  background: #e9e9e9;
+  border-radius: 5px;
 }
 
 .product_elem_btn {
