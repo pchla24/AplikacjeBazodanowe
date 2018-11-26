@@ -210,6 +210,11 @@ def clearCart():
 
 @app.route('/makeOrder', methods = ['GET', 'POST'])
 def makeOrder():
+    currentCart = model.Koszyk.query.filter_by(klient_id=current_user.id).first()
+    currentCartID = currentCart.id
+    currentCartItem = model.KoszykPozycja.query.filter_by(koszyk_id=currentCartID).first()
+    if currentCartItem is None:
+        return render_template('emptycart.html')
     stores = model.LokalizacjaSklepu.query.all()
     return render_template('order.html', productList = stores)
 
