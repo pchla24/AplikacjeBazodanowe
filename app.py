@@ -150,8 +150,8 @@ def bikes():
 @app.route('/frames')
 def frames():
     textToFind = request.args.get('search', '')
-    priceMin = request.args.get('price-min', '')
-    priceMax = request.args.get('price-max', '')
+    priceMin = request.args.get('priceMin', '')
+    priceMax = request.args.get('priceMax', '')
     page = request.args.get('page', 1, type=int)
     if textToFind != '':
         frames = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='Rama').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%")).paginate(page=page, per_page=10)
@@ -167,8 +167,8 @@ def frames():
 @app.route('/handlebars')
 def handlebars():
     textToFind = request.args.get('search', '')
-    priceMin = request.args.get('price-min', '')
-    priceMax = request.args.get('price-max', '')
+    priceMin = request.args.get('priceMin', '')
+    priceMax = request.args.get('priceMax', '')
     page = request.args.get('page', 1, type=int)
     if textToFind != '':
         handlebars = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='Kierownica').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%")).paginate(page=page, per_page=10)
@@ -184,8 +184,8 @@ def handlebars():
 @app.route('/saddles')
 def saddles():
     textToFind = request.args.get('search', '')
-    priceMin = request.args.get('price-min', '')
-    priceMax = request.args.get('price-max', '')
+    priceMin = request.args.get('priceMin', '')
+    priceMax = request.args.get('priceMax', '')
     page = request.args.get('page', 1, type=int)
     if textToFind != '':
         saddles = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='Siodełko').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%")).paginate(page=page, per_page=10)
@@ -201,8 +201,8 @@ def saddles():
 @app.route('/wheels')
 def wheels():
     textToFind = request.args.get('search', '')
-    priceMin = request.args.get('price-min', '')
-    priceMax = request.args.get('price-max', '')
+    priceMin = request.args.get('priceMin', '')
+    priceMax = request.args.get('priceMax', '')
     page = request.args.get('page', 1, type=int)
     if textToFind != '':
         wheels = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='Koło').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%")).paginate(page=page, per_page=10)
@@ -218,8 +218,8 @@ def wheels():
 @app.route('/tyres')
 def tyres():
     textToFind = request.args.get('search', '')
-    priceMin = request.args.get('price-min', '')
-    priceMax = request.args.get('price-max', '')
+    priceMin = request.args.get('priceMin', '')
+    priceMax = request.args.get('priceMax', '')
     page = request.args.get('page', 1, type=int)
     if textToFind != '':
         tyres = model.Produkt.query.join(model.Kategoria, model.Produkt.kategoria_id == model.Kategoria.id).filter_by(nazwa_kategorii='Opona').filter(model.Produkt.nazwa_produktu.ilike("%" + textToFind + "%")).paginate(page=page, per_page=10)
