@@ -49,14 +49,19 @@
 						<input type="hidden" name="idOfProduct" value="{{id_of_product}}">
 						<a href=""><button type="submit" class="addToCartButton">Dodaj do koszyka</button></a>
 					</form>
-                    <!--
 
+                    {% if current_user.login == 'admin' %}
                     <form action="deleteProduct" method="POST">
 						<input type="hidden" name="idOfProduct" value="{{id_of_product}}">
 						<a href=""><button type="submit" class="addToCartButton">Usuń produkt</button></a>
 					</form>
-                  
-                    -->
+
+	                <form action="updateProductForm" method="POST">
+						<input type="hidden" name="idOfProduct" value="{{id_of_product}}">
+						<a href=""><button type="submit" class="addToCartButton">Edytuj produkt</button></a>
+					</form>
+                    {% endif %}
+
 				</div>
 
 			</div>

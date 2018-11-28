@@ -44,11 +44,13 @@ def signIn():
         if (check_password_hash(user.haslo, _password)):
             login_user(user)
             return redirect('/')
+
     return render_template('wronglogin.html')
 
 @app.route('/register')
 def register():
     return render_template('register.html')
+
 
 
 @app.route('/signUp', methods=['GET','POST'])
@@ -83,8 +85,23 @@ def deleteProduct():
         db.session.commit()
     return render_template('productAdded.html')
 
+@app.route('/updateProduct', methods=['GET', 'POST'])
 def updateProduct():
-    return 0
+    if request.method == 'POST':
+        productID = request.form['idOfProduct']
+        product = model.Produkt.query.filter_by(id = productID).first()
+
+
+@app.route('/updateProductForm', methods=['GET', 'POST'])
+def updateProductForm():
+    if request.method == 'POST':
+        productID = request.form['idOfProduct']
+        product = model.Produkt.query.filter_by(id = productID).first()
+        category = model.Kategoria.query.filter_by(id=product.kategoria_id).first()
+        categories = model.Kategoria.query.all()
+        return render_template('updateProduct.html', productName=product.nazwa_produktu,
+                               category=category.nazwa_kategorii, diameter='nie dotyczy', price=product.cena,
+                               type='nie dotyczy', id_of_product=product.id, categories = categories)
 
 @app.route('/addProduct', methods=['GET', 'POST'])
 def addProduct():
