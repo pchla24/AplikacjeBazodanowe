@@ -46,6 +46,7 @@ class Produkt (db.Model):
                                 {% for category in categories %}
                                     <option><span class="product_list_name">{{category.nazwa_kategorii}}</span></option>
                             {% endfor %}
+                            <input type="hidden" id="productId" value="{{ id_of_product }}">
                             </select>
 
 							<input type="submit" id="regsubmit" value="Zapisz produkt">

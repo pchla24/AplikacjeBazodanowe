@@ -67,6 +67,12 @@ def signUp():
     if not EMAIL_REGEX.match(_email):
         flash('Niepoprawny email')
         return render_template('wrongregister.html')
+    if _imie == "":
+        flash('Nie podano imienia')
+        return render_template('wrongregister.html')
+    if _nazwisko == "":
+        flash('Nie podano nazwiska')
+        return render_template('wrongregister.html')
     _password = request.form['password']
     _hashed_password = generate_password_hash(_password)
     new_user = model.Klient(imie = _imie, nazwisko = _nazwisko , login=_login, email=_email, haslo=_hashed_password)
@@ -85,14 +91,20 @@ def deleteProduct():
         product = model.Produkt.query.filter_by(id = productID).first()
         db.session.delete(product)
         db.session.commit()
-    return render_template('productAdded.html')
+    return render_template('productDeleted.html')
 
 @app.route('/updateProduct', methods=['GET', 'POST'])
 def updateProduct():
     if request.method == 'POST':
-        productID = request.form['idOfProduct']
+        productID = request.form['productId']
         product = model.Produkt.query.filter_by(id = productID).first()
-
+        _kategoria = request.form.get('kategoria')
+        kategoriaId = model.Kategoria.query.filter_by(nazwa_kategorii=_kategoria).first()
+        product.nazwa_produktu = request.form['nazwa produktu']
+        product.cena = request.form['cena']
+        product.kategoria_id = kategoriaId
+        db.session.commit()
+    return redirect ('/')
 
 @app.route('/updateProductForm', methods=['GET', 'POST'])
 def updateProductForm():
