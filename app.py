@@ -102,7 +102,7 @@ def updateProduct():
         product = model.Produkt.query.filter_by(id = productID).update(dict(nazwa_produktu = nowanazwa))
         # print("ok2")
         db.session.commit()
-    return redirect ('/')
+        return render_template('productUpdated.html')
 
 @app.route('/updateProductForm', methods=['GET', 'POST'])
 def updateProductForm():
