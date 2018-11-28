@@ -21,7 +21,6 @@ app.config['SECRET_KEY'] = 'fghjmkfrihffrhr'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-EMAIL_REGEX = re.compile(r"^@]+@[^@]+\.[^@]+")
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -64,7 +63,7 @@ def signUp():
     if email:
         flash('Zajęty email')
         return render_template('wrongregister.html')
-    if not EMAIL_REGEX.match(_email):
+    if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", _email):
         flash('Niepoprawny email')
         return render_template('wrongregister.html')
     if _imie == "":
