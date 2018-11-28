@@ -1,6 +1,6 @@
 import uuid
 #from flask.ext.login import UserMixin
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_login import LoginManager, login_user, current_user, UserMixin, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -9,6 +9,7 @@ import pymysql
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Length, Email
 from werkzeug import generate_password_hash, check_password_hash
+import re
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sklep:sklep@localhost:3306/sklep_rowerowy'
 app.config['SQLALCHEMY_ECHO'] = True
@@ -20,6 +21,7 @@ app.config['SECRET_KEY'] = 'fghjmkfrihffrhr'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
+EMAIL_REGEX = re.compile(r"^@]+@[^@]+\.[^@]+")
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -35,23 +37,18 @@ def login():
 
 @app.route('/signIn', methods=['GET','POST'])
 def signIn():
-    form = model.LoginForm()
     _login = request.form['login']
     _password = request.form['password']
- #   if form.validate_on_submit():
     user = model.Klient.query.filter_by(login=_login).first()
     if user:
         if (check_password_hash(user.haslo, _password)):
             login_user(user)
             return redirect('/')
-
     return render_template('wronglogin.html')
 
 @app.route('/register')
 def register():
     return render_template('register.html')
-
-
 
 @app.route('/signUp', methods=['GET','POST'])
 def signUp():
@@ -60,10 +57,15 @@ def signUp():
     _login = request.form['login']
     login = model.Klient.query.filter_by(login=_login).first()
     if login:
+        flash('Zajęty login')
         return render_template('wrongregister.html')
     _email = request.form['email']
     email = model.Klient.query.filter_by(email = _email).first()
     if email:
+        flash('Zajęty email')
+        return render_template('wrongregister.html')
+    if not EMAIL_REGEX.match(_email):
+        flash('Niepoprawny email')
         return render_template('wrongregister.html')
     _password = request.form['password']
     _hashed_password = generate_password_hash(_password)

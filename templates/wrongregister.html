@@ -19,7 +19,18 @@
 					</div>
 				</header>
 				<div id="accountCreated">
-          <h2>Zajęty login lub email</h2>
+          <h2>Niepowodzenie rejestracji: </h2>
+                    {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <p><h2> {{ message }}</h2></p>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
+                {% block body %}{% endblock %}
+
           <a href="register"><button type="button" id="createUserLoginButton">Powrót</button></a>
 				</div>
       <script type="text/javascript" src=""></script>
