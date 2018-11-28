@@ -96,13 +96,12 @@ def deleteProduct():
 @app.route('/updateProduct', methods=['GET', 'POST'])
 def updateProduct():
     if request.method == 'POST':
-        productID = request.form['productId']
-        product = model.Produkt.query.filter_by(id = productID).first()
-        _kategoria = request.form.get('kategoria')
-        kategoriaId = model.Kategoria.query.filter_by(nazwa_kategorii=_kategoria).first()
-        product.nazwa_produktu = request.form['nazwa produktu']
-        product.cena = request.form['cena']
-        product.kategoria_id = kategoriaId
+        productID = request.form['idOfProduct']
+        nowanazwa= request.form['nazwa_produktu']
+        # print("ok")
+        nowacena = request.form['cena']
+        product = model.Produkt.query.filter_by(id = productID).update(dict(nazwa_produktu = nowanazwa))
+        # print("ok2")
         db.session.commit()
     return redirect ('/')
 

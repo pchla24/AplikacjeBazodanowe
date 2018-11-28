@@ -18,36 +18,17 @@
 						</nav>
 					</div>
 				</header>
-            <!--
-class Produkt (db.Model):
-    __tablename__ = "Produkt"
-    nazwa_produktu = Column('Nazwa_produktu', Unicode)
-    id = Column('id', Integer, primary_key = True)
-    kategoria_id = Column('Kategoria_id', Integer, ForeignKey('Kategoria.id'))
-    rower_id = Column('Rower_id', Integer, ForeignKey('Rower.id'))
-    cena = Column('Cena', BigInteger)
 
-    kategoria = relationship('Kategoria', foreign_keys=kategoria_id)
-    rower = relationship('Rower', foreign_keys=rower_id)
-            -->
 				<div id="regFormContainer">
-						<form method="POST"  action="/updateProduct" onsubmit="return Validate()">
-
+						<form method="POST"  action="updateProduct" >
+                            <input type="hidden" name="idOfProduct" value="{{id_of_product}}">
                             <label for="nazwa_produktu">Nazwa produktu</label><br />
-							<input type="text" id="nazwa_profuktu" name="nazwa_produktu" placeholder="{{ productName }}"><br />
+							<input type="text" id="nazwa_profuktu" name="nazwa_produktu" placeholder="{{ productName }}" required><br />
 							<div id="nazwa_error" class="reg_error"></div>
 
                             <label for="cena">Cena</label><br />
-							<input type="text" id="cena" name="cena" placeholder="{{ price }}"><br />
+							<input type="text" id="cena" name="cena" placeholder="{{ price }}" required><br />
 							<div id="cena_error" class="reg_error"></div>
-
-                             <label for="kategoria">Kategoria</label><br />
-                            <select name="kategoria" placeholder = {{ category }}>
-                                {% for category in categories %}
-                                    <option><span class="product_list_name">{{category.nazwa_kategorii}}</span></option>
-                            {% endfor %}
-                            <input type="hidden" id="productId" value="{{ id_of_product }}">
-                            </select>
 
 							<input type="submit" id="regsubmit" value="Zapisz produkt">
 
