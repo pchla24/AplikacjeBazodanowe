@@ -88,7 +88,7 @@ nav a:hover::before {
 #content {
   width:100%;
   position: relative;
-  margin: 2000px auto;
+  margin: 1000px auto;
   margin-bottom: 0px;
   background: #f2f2f2;
 }
